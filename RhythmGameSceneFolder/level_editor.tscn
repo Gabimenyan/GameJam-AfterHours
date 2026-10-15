@@ -6,3 +6,5 @@
 script = ExtResource("1_cntec")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1010317132]
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

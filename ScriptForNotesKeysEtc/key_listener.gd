@@ -22,6 +22,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if Input.is_action_just_pressed(key_name):
+		Signals.KeyListenerPress.emit(key_name, frame)
+	
 	if falling_key_queue.size() > 0:
 		if falling_key_queue.front().has_passed:
 			falling_key_queue.pop_front()
