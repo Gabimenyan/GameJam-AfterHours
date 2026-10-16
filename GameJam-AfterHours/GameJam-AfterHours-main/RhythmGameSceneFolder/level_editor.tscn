@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bm715c6i25ufr"]
+
+[ext_resource type="Script" uid="uid://baux1iboyc732" path="res://ScriptForNotesKeysEtc/level_editor.gd" id="1_cntec"]
+
+[node name="LevelEditor" type="Node2D" unique_id=1199791011]
+script = ExtResource("1_cntec")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1010317132]
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

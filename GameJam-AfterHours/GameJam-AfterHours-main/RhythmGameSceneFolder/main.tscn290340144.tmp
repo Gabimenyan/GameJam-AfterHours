@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bj2bhiiwv3jlc"]
+
+[ext_resource type="PackedScene" uid="uid://xfl4xkoa3kkp" path="res://KeyListener.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ircwx4nxmv2q" path="res://RhythmGameSceneFolder/game_ui.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bm715c6i25ufr" path="res://RhythmGameSceneFolder/level_editor.tscn" id="3_30rj2"]
+
+[node name="Main" type="Node2D" unique_id=1131213472]
+
+[node name="GameUI" parent="." unique_id=157101213 instance=ExtResource("1_h2yge")]
+
+[node name="KeyListener1W" parent="." unique_id=197007062 instance=ExtResource("1_0xm2m")]
+position = Vector2(317, 255)
+frame = 2
+key_name = "W-Lane1"
+
+[node name="KeyListener2A" parent="." unique_id=644839052 instance=ExtResource("1_0xm2m")]
+position = Vector2(317, 319)
+
+[node name="KeyListener3S" parent="." unique_id=557774178 instance=ExtResource("1_0xm2m")]
+position = Vector2(317, 391)
+frame = 1
+key_name = "S-Lane3"
+
+[node name="KeyListener4D" parent="." unique_id=1042978797 instance=ExtResource("1_0xm2m")]
+position = Vector2(317, 455)
+frame = 3
+key_name = "D-Lane4"
+
+[node name="LevelEditor" parent="." unique_id=1199791011 instance=ExtResource("3_30rj2")]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ircwx4nxmv2q"]
+
+[ext_resource type="Script" uid="uid://sowy3aio0f34" path="res://ScriptForNotesKeysEtc/game_ui.gd" id="1_ue6oa"]
+
+[node name="GameUI" type="Control" unique_id=157101213]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ue6oa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1191055210]
+
+[node name="ScoreLabel2" type="RichTextLabel" parent="CanvasLayer" unique_id=839060307]
+offset_right = 365.0
+offset_bottom = 67.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 41
+text = "1000 pts"
+scroll_active = false
+
+[node name="ComoLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1379931058]
+offset_top = 63.0
+offset_right = 365.0
+offset_bottom = 134.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 41
+text = "0X COMBO"
+scroll_active = false
