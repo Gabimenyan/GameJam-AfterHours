@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://xfl4xkoa3kkp"]
+
+[ext_resource type="Texture2D" uid="uid://cksk7m5axfgbt" path="res://arrows.webp" id="1_hr36x"]
+[ext_resource type="Script" uid="uid://b3g6xp80x67q7" path="res://ScriptForNotesKeysEtc/key_listener.gd" id="2_d3f4x"]
+
+[sub_resource type="Animation" id="Animation_hr36x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.4807141, 1.4807141, 1.4807141, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d3f4x"]
+resource_name = "key_hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.481, 1.481, 1.481, 1), Color(18.892157, 18.892157, 18.892157, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vrshc"]
+_data = {
+&"RESET": SubResource("Animation_hr36x"),
+&"key_hit": SubResource("Animation_d3f4x")
+}
+
+[node name="KeyListener" type="Sprite2D" unique_id=197007062]
+texture = ExtResource("1_hr36x")
+hframes = 4
+vframes = 3
+script = ExtResource("2_d3f4x")
+key_name = "A-Lane2"
+
+[node name="RandomSpawnTimer" type="Timer" parent="." unique_id=804269007]
+one_shot = true
+autostart = true
+
+[node name="GlowOverlay" type="Sprite2D" parent="." unique_id=2104075391]
+modulate = Color(1.4807141, 1.4807141, 1.4807141, 1)
+position = Vector2(0, 3)
+texture = ExtResource("1_hr36x")
+hframes = 4
+vframes = 3
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=230502404]
+libraries/ = SubResource("AnimationLibrary_vrshc")
+autoplay = &"key_hit"
+
+[connection signal="timeout" from="RandomSpawnTimer" to="." method="_on_random_spawn_timer_timeout"]
